@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Web App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #message {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">Hello, World!</div>
+  <input type="text" id="inputMessage" placeholder="Type your message here">
+  <button onclick="changeMessage()">Change Message</button>
+  <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+  <script>
+    function changeMessage() {
+      var newMessage = document.getElementById('inputMessage').value;
+      document.getElementById('message').innerText = newMessage;
+    }
+
+    function changeBackgroundColor() {
+      var colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#FF33A1'];
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = randomColor;
+    }
+  </script>
+</body>
+</html>
